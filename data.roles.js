@@ -1,5 +1,5 @@
 module.exports = {
-    getState: function(){
+    roles: function(){
         for (var state in this.states){
             if(this.states[state].check()) {
                 return this.states[state]
@@ -18,7 +18,6 @@ module.exports = {
                 harvester: 1,
                 upgrader: 2,
             }
-            
         },
         first_base: {
             check: function(){
