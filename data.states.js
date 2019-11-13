@@ -17,8 +17,8 @@ module.exports = {
             creepDistribution: {
                 harvester: 1,
                 upgrader: 2,
-            }
-            
+            },
+            extentions: 0,
         },
         first_base: {
             check: function(){
@@ -30,6 +30,7 @@ module.exports = {
                 harvester: 2,
                 upgrader: 2,
             },
+            extentions: 1,
         }
     }
 };

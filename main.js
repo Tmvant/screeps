@@ -5,6 +5,7 @@ var roleBuilder = require('role.builder');
 var dataStates = require('data.states');
 var dataCreeps = require('data.creeps');
 
+var constructionManager = require('manager.construction');
 var roleManager = require('manager.roles');
 var spawnManager = require('manager.spawns');
 
@@ -18,6 +19,10 @@ module.exports.loop = function () {
     //console.log("Creep disparity (Harvester):", creepDisparity['harvester'])
     //roleManager.redistribute()
     spawnManager.spawn(creepDisparity)
+    //TODO: This is not generalized for multiple rooms or for multiple buildings
+    if(constructionManager.extentions < state.extentions){
+        constructionManager.plan_extention()
+    }
     //console.log("Creep disparity after spawning (Harvester):", creepDisparity['harvester'])
 
     for(var name in Game.creeps) {
